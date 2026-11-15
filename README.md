@@ -23,7 +23,7 @@ Replace `<profile>` with the profile that runs your UI: `web` for browser use,
 `desktop` for the desktop app.
 
 ```shell
-git clone https://github.com/<owner>/dsh-lmfpd
+git clone https://github.com/xmtaha/dsh-lmfpd
 dsh plugin --profile <profile> add ./dsh-lmfpd
 dsh plugin --profile <profile> add lmfpd-sdk
 ```
@@ -37,7 +37,7 @@ You can also add the cloned folder from **Settings > Plugins** in the DSH UI.
 ### Straight from the repository
 
 ```shell
-dsh plugin --profile <profile> add github:<owner>/dsh-lmfpd
+dsh plugin --profile <profile> add github:xmtaha/dsh-lmfpd
 ```
 
 pnpm clones the repository and installs `lmfpd-sdk` itself. If pnpm blocks the
