@@ -1,0 +1,35 @@
+{
+  "name": "dsh-lmfpd",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Model identity test (LM Fingerpoint Detector) for the DSH settings page.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "lmfpd-sdk": "^0.2.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}

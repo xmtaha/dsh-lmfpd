@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Model identity test",
+    "description": "Asks the selected model to write random numbers, then ranks the closest known model fingerprint."
+  }
+}
