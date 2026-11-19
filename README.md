@@ -24,12 +24,15 @@ Replace `<profile>` with the profile that runs your UI: `web` for browser use,
 
 ```shell
 git clone https://github.com/xmtaha/dsh-lmfpd
+cd dsh-lmfpd && pnpm install && cd ..
 dsh plugin --profile <profile> add ./dsh-lmfpd
-dsh plugin --profile <profile> add lmfpd-sdk
 ```
 
-The third line matters: pnpm links a local directory without installing that
-directory's own dependencies, so `lmfpd-sdk` is named explicitly.
+The second line matters: `dsh plugin add` links the clone instead of copying it,
+and Node resolves a linked package's imports from its real path. Without
+`node_modules` inside the clone, `index.js` cannot find `lmfpd-sdk` and the
+plugin fails to load (the routes 404 and the section never appears). Adding
+`lmfpd-sdk` to the profile does not help for the same reason.
 
 Restart DSH afterwards; the section appears as **Settings > Model identity test**.
 You can also add the cloned folder from **Settings > Plugins** in the DSH UI.
